@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  background-image: url("../../public/images/pattern.png");
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+img, video{ height: fit-content;}
+
+h1, h2, h3, h4, h5, h6{font-weight: 700; }
+h2{font-size: 24px; text-align: center; }
+
+Button {outline: none;}
+.button-main{font-weight: 500; text-transform: uppercase;}
+.button-main span{ font-size: 18px;}
+
+container{width: 1200px; margin: 0px auto; display: flex; height: inherit;}
+
+.pro-box{ background-color: #fff;padding: 5px;}
+.pro-title{ width: 100%; color: #000; font-size: 16px; font-weight: 600; text-align: center; margin-top: 10px;}
+
+/* .pro-box.cat-box{ height: 320px; } */
+
+.title{ width: 100%; color: #000; font-size: 16px; font-weight: 600; margin-top: 10px;}
+.title span{ font-size: 13px; color: #666; font-weight: 100; display: block; line-height: 15px;}
+
+.pro-left{ width: 300px;}
+.pro-right{ width: 820px;}
+
+.table-theme thead .bg-gray-50{ background: #F0F0F0; font-size: 13px;}
+.table-theme td.py-4{ padding-top: 8px;padding-bottom: 8px;}
+
+.tooltip-cent .w-fit{ width: 100%;}
+
