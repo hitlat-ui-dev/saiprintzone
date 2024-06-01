@@ -5,7 +5,7 @@ import { Label, TextInput, Button, Select, Textarea, FileInput } from "flowbite-
 const page = () => {
   return (
     <>
-      <Pagetitle Title="Add New Catagory" />
+      <Pagetitle Title="Add New Catagory now" />
       <div className="w-full grid gap-10 grid-cols-4 mt-5 mb-10">
         <div>
           <Label value="Catagory Name" className="text-white" />
