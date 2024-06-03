@@ -1,6 +1,6 @@
 import "./globals.css";
 
-<link rel="icon" href="./favicon.ico" />;
+
 export const metadata = {
   title: "Sai Print Zone",
   description: "All Type Of Printing Solution",
