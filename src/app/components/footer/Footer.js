@@ -7,7 +7,7 @@ const Footer = () => {
         <img
           src="../images/saiprintzone_black.png"
           alt="saiprintzone"
-          width="120"
+          width="160"
         />
         <div className="text-gray-500 text-sm">
           <span className="font-bold w-full flex text-black">

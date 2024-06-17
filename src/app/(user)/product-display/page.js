@@ -7,7 +7,7 @@ const page = () => {
     <div className="w-full bg-white p-5 rounded-md flex justify-between my-5">
       <div className="pro-left">
         <img
-          src="../images/catagory-img.png"
+          src="../../../../images/catagory-img.png"
           alt="Catagory"
           className="w-full bg-gray-200"
         />
