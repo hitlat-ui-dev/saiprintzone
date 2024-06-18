@@ -36,7 +36,7 @@ const Header = () => {
               <Dropdown.Item><Link href="/changepassword">Change Password</Link></Dropdown.Item>
               <Dropdown.Item><Link href="/ordersummery">Order Summary</Link></Dropdown.Item>
               <Dropdown.Item><Link href="/payment">Add to Wallet</Link></Dropdown.Item>
-              <Dropdown.Item><Link href="/">Sign out</Link></Dropdown.Item>
+              <Dropdown.Item><Link href="/" onClick={()=>{localStorage.removeItem('token')}} className="text-red-700 font-bold">Sign out</Link></Dropdown.Item>
             </Dropdown>
           </div>
         </div>

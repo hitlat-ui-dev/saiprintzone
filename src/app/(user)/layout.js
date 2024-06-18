@@ -1,8 +1,16 @@
-import React from 'react'
+"use client";
+import React, { useEffect } from 'react'
 import Header from '../components/header/Header'
 import Footer from '../components/footer/Footer'
+import { useRouter } from 'next/navigation'
 
-const Userlayout = ({children }) => {
+const Userlayout = ({ children }) => {
+  const router = useRouter(""); 
+  useEffect(() => {
+    if (!localStorage.getItem('token')) {
+      router.push('/');
+    }
+  }, [])
   return (
     <>
       <Header />

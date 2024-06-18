@@ -1,8 +1,17 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Header from "../components/header/Header";
 import AdminHeader from "../components/header/AdminHeader";
 import Footer from "../components/footer/Footer";
+import { useRouter } from 'next/navigation'
+
 const Adminlayout = ({ children }) => {
+  const router = useRouter(""); 
+  useEffect(() => {
+    if (!localStorage.getItem('token')) {
+      router.push('/');
+    }
+  }, [])
   return (
     <>
       <Header />
