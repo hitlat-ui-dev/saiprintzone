@@ -6,6 +6,7 @@ import Link from "next/link";
 import axios from "axios";
 import { useRouter } from 'next/navigation'
 import Loading from '../Loading'
+
 const Login = () => {
   
   const [username, setUsername] = useState('');
@@ -15,29 +16,51 @@ const Login = () => {
   const router = useRouter(""); 
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    await loginApi();
-    setLoading(false);
+    //setLoading(true);
     console.log(username, password);
-  };
-  const loginApi = () => {
+    e.preventDefault();
+    await loginApi();
+    //setLoading(false);
     
-    axios.post("https://dgpatelss.org.in/printing/web_api/user/signIn", {
-      username: username,
-      password: password
-    })
-    .then((result) => {
-      console.log(result);
-      if (result.data.token) {
-        localStorage.setItem('token', result.data.token);
-        router.push('/catagory'); // Replace with your desired route
-      }
+  };
+  const loginApi = async() => {
+    try {
+      const response = await axios.post('https://dummyjson.com/auth/login', {
+        username: username,
+       password: password
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      localStorage.setItem('token:', response.data.token);
+      router.push('/catagory'); // Replace with your desired route
+      console.log('Response:', response.data);
+    } catch (error) {
+      console.error('Error posting data:', error);
+    }
+  };
+    //axios.post('https://dummyjson.com/auth/login', 
+  //   axios.post('https://dgpatelss.org.in/printing/web_api/user/signIn',
+  //     {
+  //     username: username,
+  //     password: password
+  //   })
+  //   .then((result) => {
+  //     console.log(result);
+  //     if (result.data.token) {
+  //       localStorage.setItem('token', result.data.token);
+  //       router.push('/catagory'); // Replace with your desired route
+  //     }
      
-    }).catch((err) => {
+  //   }).catch((err) => {
       
-      setError(<><span className="font-bold">Login failed...</span> Please check your username and password.</>);
-    });
+  //     setError(<><span className="font-bold">Login failed...</span> Please check your username and password.</>);
+  //   });
+   
+  //}
+  if (loading) {
+    return <Loading />;
   }
   
   return (
